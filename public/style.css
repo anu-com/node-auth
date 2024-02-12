@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1706460257771-b1c110b09b23?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #df4391;
+    position: relative;
+    overflow: hidden;
+}
+
+#ram {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.493);
+    text-align: center;
+    justify-content: center;
+}
+
+#ram h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#ram h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+button {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 50px;
+    background: transparent;
+    border: 3px solid #df4391;
+    color: #fff;
+}
+
+h4 {
+    cursor: pointer;
+
+}
+
+h4 a {
+    cursor: pointer;
+    text-decoration: none;
+    color: green;
+}
+
+button:hover{
+    background-color: #df4391;
+    color: #fff;
+    transition: 0.5s;
+
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
+}
