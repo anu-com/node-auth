@@ -79,3 +79,26 @@ button a {
     text-decoration: none;
     color: #fff;
 }
+
+#ram #button2 {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 50px;
+    background: transparent;
+    border: 3px solid #df4391;
+    color: #fff;
+}
+
+#ram #button2:hover{
+    background-color: #df4391;
+    color: #fff;
+    transition: 0.5s;
+
+}
+
+#ram #button2 a {
+    text-decoration: none;
+    color: #fff;
+}

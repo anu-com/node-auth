@@ -1,6 +1,6 @@
 mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/student").then(() => {
+mongoose.connect("mongodb://localhost:27017/adit").then(() => {
     console.log("database connected");
 }).catch((err) => { 
     console.log(err);

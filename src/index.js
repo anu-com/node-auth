@@ -1,7 +1,7 @@
 express = require('express');
 path = require('path');
 app = express();
-phash = require('bcrypt');
+bcrypt = require('bcrypt');
 student = require('./database');
 port=8080;
 
@@ -14,17 +14,39 @@ app.get('/', function(req, res){
     res.render('login');
 })
 
+app.get('/home',(req,res) => {
+    res.render('home')
+})
 
+
+
+
+app.post('/', async(req, res) => {
+
+    checkuser = await student.findOne({uname: req.body.uname})
+    if(checkuser){
+        const checkpass = await bcrypt.compare(req.body.pass, checkuser.pass);
+        if(checkpass){res.redirect('/home')}
+        else{res.send('incorrect pasword plese try again')}
+    }
+    else{res.send('user does not exist')}
+    
+})
 
 app.post('/register', async(req,res) =>{
 const{uname, pass} = req.body;
-console.log(uname, pass)
-saltRounds = 10;
-encpass = phash.hash(pass, saltRounds);
-console.log(encpass)
- newStudent = new student({uname, encpass});
+
+existingUser = await student.findOne({uname});
+if(existingUser){res.send("user already exists. please try another username")}
+else{
+enpass = await bcrypt.hash(pass, 11);
+newStudent = new student({
+    uname:uname,
+    pass: enpass
+});
+console.log(uname, enpass)
  studentsave = await newStudent.save();
- res.redirect('/register');
+ res.redirect('/register')};
 
 })
 
